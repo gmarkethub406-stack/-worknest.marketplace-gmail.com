@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Private messaging on WorkNest.">
+  <title>Messages — WorkNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Work<span>Nest</span></a>
+
+    <div class="nav-buttons">
+      <a href="index.html" class="btn btn-light">Home</a>
+      <a href="jobs.html" class="btn btn-light">Browse Jobs</a>
+      <a href="profile.html" class="btn btn-light">My Profile</a>
+      <a href="login.html" class="btn btn-primary">Log In</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+
+      <div style="max-width: 900px; margin: 0 auto;">
+
+        <div class="section-title">
+          <h2>Messages</h2>
+          <p>Communicate privately with clients and freelancers on WorkNest.</p>
+        </div>
+
+        <div class="card">
+
+          <div
+            id="conversation"
+            style="min-height:300px; padding:20px; background:#f8fafc; border-radius:10px; margin-bottom:20px;"
+          >
+
+            <div style="text-align:center; padding:70px 20px; color:#64748b;">
+              <h3>No messages yet</h3>
+              <p>
+                Your conversations with clients and freelancers will appear
+                here.
+              </p>
+            </div>
+
+          </div>
+
+          <form id="messageForm">
+
+            <label for="recipient">Recipient</label>
+
+            <input
+              type="text"
+              id="recipient"
+              name="recipient"
+              placeholder="Enter recipient name"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <label for="message">Message</label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message..."
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none; resize:vertical;"
+            ></textarea>
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width:100%;"
+            >
+              Send Message
+            </button>
+
+          </form>
+
+          <p style="text-align:center; margin-top:22px; color:#64748b;">
+            Messages will be securely stored and delivered through the
+            WorkNest platform after the backend is connected.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="copyright">
+      © 2026 WorkNest. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("messageForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const recipient = document.getElementById("recipient").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!recipient || !message) {
+        alert("Please complete all fields.");
+        return;
+      }
+
+      alert(
+        "Your messaging page is ready. Real-time private messaging will be connected during the backend setup."
+      );
+
+      document.getElementById("message").value = "";
+    });
+  </script>
+
+</body>
+</html>
