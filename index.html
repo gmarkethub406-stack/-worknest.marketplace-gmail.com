@@ -3,554 +3,281 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WorkNest — Find Talent. Get Work. Build Together. A professional global freelance marketplace for clients and freelancers.">
+
+  <meta
+    name="description"
+    content="WorkNest — Find Talent. Get Work. Build Together."
+  >
+
   <title>WorkNest — Find Talent. Get Work. Build Together.</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #172033;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .navbar {
-      background: #ffffff;
-      border-bottom: 1px solid #e7eaf0;
-      padding: 18px 6%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .logo span {
-      color: #2563eb;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover {
-      color: #2563eb;
-    }
-
-    .nav-buttons {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    .btn-primary {
-      background: #2563eb;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #1d4ed8;
-    }
-
-    .btn-light {
-      background: #eef4ff;
-      color: #2563eb;
-    }
-
-    .hero {
-      padding: 90px 6% 75px;
-      background: linear-gradient(135deg, #eef5ff 0%, #ffffff 60%);
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: #e5edff;
-      color: #2563eb;
-      padding: 8px 15px;
-      border-radius: 30px;
-      font-size: 14px;
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      max-width: 850px;
-      margin: auto;
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.05;
-      letter-spacing: -3px;
-    }
-
-    .hero h1 span {
-      color: #2563eb;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: 24px auto;
-      color: #5c6678;
-      font-size: 19px;
-    }
-
-    .hero-buttons {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .search-box {
-      max-width: 800px;
-      margin: 45px auto 0;
-      background: white;
-      padding: 10px;
-      border: 1px solid #e1e6ef;
-      border-radius: 12px;
-      display: flex;
-      box-shadow: 0 10px 35px rgba(30, 50, 90, 0.08);
-    }
-
-    .search-box input {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding: 15px;
-      font-size: 16px;
-    }
-
-    .section {
-      padding: 75px 6%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 38px;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #697386;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border: 1px solid #e5e9f0;
-      border-radius: 14px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(30, 50, 90, 0.08);
-    }
-
-    .icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 12px;
-      background: #eaf1ff;
-      color: #2563eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .card p {
-      color: #687386;
-    }
-
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .category {
-      background: white;
-      border: 1px solid #e5e9f0;
-      padding: 22px;
-      border-radius: 12px;
-      font-weight: 700;
-      text-align: center;
-    }
-
-    .category:hover {
-      border-color: #2563eb;
-      color: #2563eb;
-    }
-
-    .cta {
-      margin: 30px 6% 80px;
-      padding: 65px 30px;
-      border-radius: 18px;
-      background: #172033;
-      color: white;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .cta p {
-      max-width: 650px;
-      margin: 0 auto 28px;
-      color: #cbd2df;
-    }
-
-    footer {
-      background: #ffffff;
-      border-top: 1px solid #e5e9f0;
-      padding: 45px 6%;
-    }
-
-    .footer-content {
-      max-width: 1150px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 35px;
-    }
-
-    footer h3,
-    footer h4 {
-      margin-bottom: 14px;
-    }
-
-    footer p,
-    footer a {
-      color: #687386;
-      font-size: 14px;
-    }
-
-    footer a {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .copyright {
-      max-width: 1150px;
-      margin: 35px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid #e5e9f0;
-      color: #7a8495;
-      font-size: 13px;
-    }
-
-    @media (max-width: 850px) {
-      .nav-links {
-        display: none;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .categories {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .navbar {
-        padding: 15px 5%;
-      }
-
-      .nav-buttons .btn-light {
-        display: none;
-      }
-
-      .hero {
-        padding: 65px 5% 55px;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .search-box {
-        flex-direction: column;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        gap: 10px;
-      }
-
-      .search-box input {
-        border: 1px solid #e1e6ef;
-        border-radius: 8px;
-        background: white;
-      }
-
-      .section {
-        padding: 55px 5%;
-      }
-
-      .section-title h2 {
-        font-size: 30px;
-      }
-
-      .categories {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-content {
-        grid-template-columns: 1fr;
-      }
-
-      .cta {
-        margin: 10px 5% 55px;
-      }
-
-      .cta h2 {
-        font-size: 30px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <header class="navbar">
-    <a href="index.html" class="logo">Work<span>Nest</span></a>
 
-    <nav class="nav-links">
-      <a href="#how-it-works">How It Works</a>
-      <a href="#categories">Categories</a>
-      <a href="jobs.html">Find Work</a>
+    <a href="index.html" class="logo">
+      Work<span>Nest</span>
+    </a>
+
+    <nav class="nav-buttons">
+
+      <a href="jobs.html" class="btn btn-light">
+        Browse Jobs
+      </a>
+
+      <a href="login.html" class="btn btn-light">
+        Log In
+      </a>
+
+      <a href="signup.html" class="btn btn-primary">
+        Sign Up
+      </a>
+
     </nav>
 
-    <div class="nav-buttons">
-      <a href="login.html" class="btn btn-light">Log In</a>
-      <a href="signup.html" class="btn btn-primary">Sign Up</a>
-    </div>
   </header>
+
 
   <main>
 
+    <!-- HERO -->
+
     <section class="hero">
-      <div class="hero-badge">🌍 A Global Freelance Marketplace</div>
 
-      <h1>
-        Find Talent.<br>
-        Get <span>Work.</span><br>
-        Build Together.
-      </h1>
+      <div class="hero-content">
 
-      <p>
-        WorkNest connects businesses and independent professionals
-        so they can find opportunities, work together and build trusted
-        professional relationships.
-      </p>
+        <h1>
+          Find Talent. Get Work. Build Together.
+        </h1>
 
-      <div class="hero-buttons">
-        <a href="signup.html" class="btn btn-primary">Get Started</a>
-        <a href="jobs.html" class="btn btn-light">Browse Jobs</a>
+        <p>
+          WorkNest connects clients with skilled freelancers
+          for projects, services and professional work worldwide.
+        </p>
+
+        <div class="search-box">
+
+          <input
+            type="search"
+            id="jobSearch"
+            placeholder="Search jobs, skills or services..."
+            aria-label="Search jobs, skills or services"
+          >
+
+          <button
+            class="btn btn-primary"
+            onclick="searchJobs()"
+          >
+            Search
+          </button>
+
+        </div>
+
+        <div style="margin-top:20px;">
+
+          <a
+            href="jobs.html"
+            class="btn btn-light"
+          >
+            Explore Jobs
+          </a>
+
+          <a
+            href="post-job.html"
+            class="btn btn-primary"
+          >
+            Post a Job
+          </a>
+
+        </div>
+
       </div>
 
-      <div class="search-box">
-        <input
-          type="text"
-          id="jobSearch"
-          placeholder="Search for jobs, skills or services..."
-        >
-        <button class="btn btn-primary" onclick="searchJobs()">
-          Search
-        </button>
-      </div>
     </section>
 
-    <section class="section" id="how-it-works">
+
+    <!-- HOW IT WORKS -->
+
+    <section class="section">
+
       <div class="section-title">
+
         <h2>How WorkNest Works</h2>
-        <p>A simple way for clients and freelancers to work together.</p>
+
+        <p>
+          A simple way to connect clients and freelancers.
+        </p>
+
       </div>
+
 
       <div class="cards">
 
         <div class="card">
-          <div class="icon">🔎</div>
-          <h3>Find Opportunities</h3>
+
+          <h3>1. Create an Account</h3>
+
           <p>
-            Clients can post projects while freelancers discover
-            opportunities that match their skills.
+            Sign up as a freelancer or client and create
+            your professional WorkNest account.
           </p>
+
         </div>
 
-        <div class="card">
-          <div class="icon">🤝</div>
-          <h3>Work Together</h3>
-          <p>
-            Communicate through WorkNest and manage professional
-            projects in one place.
-          </p>
-        </div>
 
         <div class="card">
-          <div class="icon">⭐</div>
-          <h3>Build Your Reputation</h3>
+
+          <h3>2. Find or Post Work</h3>
+
           <p>
-            Complete projects, receive reviews and build a professional
-            profile over time.
+            Freelancers can discover opportunities while
+            clients can post projects and find talent.
           </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>3. Work Together</h3>
+
+          <p>
+            Communicate, manage projects and build
+            professional relationships through WorkNest.
+          </p>
+
         </div>
 
       </div>
+
     </section>
 
-    <section class="section" id="categories">
+
+    <!-- CATEGORIES -->
+
+    <section class="section">
+
       <div class="section-title">
-        <h2>Explore Categories</h2>
-        <p>Discover professionals across different fields.</p>
+
+        <h2>Explore Professional Services</h2>
+
+        <p>
+          Discover talent across a wide range of categories.
+        </p>
+
       </div>
+
 
       <div class="categories">
-        <div class="category">💻 Technology</div>
-        <div class="category">🎨 Design & Creative</div>
-        <div class="category">✍️ Writing & Translation</div>
-        <div class="category">📣 Marketing</div>
-        <div class="category">📊 Business</div>
-        <div class="category">🎬 Video & Animation</div>
-        <div class="category">📱 Mobile & Web</div>
-        <div class="category">🛠️ Professional Services</div>
+
+        <a href="jobs.html" class="category">
+          Programming & Technology
+        </a>
+
+        <a href="jobs.html" class="category">
+          Design & Creative
+        </a>
+
+        <a href="jobs.html" class="category">
+          Writing & Translation
+        </a>
+
+        <a href="jobs.html" class="category">
+          Marketing
+        </a>
+
+        <a href="jobs.html" class="category">
+          Business
+        </a>
+
+        <a href="jobs.html" class="category">
+          Video & Animation
+        </a>
+
+        <a href="jobs.html" class="category">
+          Music & Audio
+        </a>
+
+        <a href="jobs.html" class="category">
+          Consulting
+        </a>
+
       </div>
+
     </section>
 
-    <section class="cta">
-      <h2>Ready to build something great?</h2>
-      <p>
-        Join WorkNest and connect with professionals and opportunities
-        from around the world.
-      </p>
 
-      <a href="signup.html" class="btn btn-primary">
-        Create Your Account
-      </a>
+    <!-- CLIENT CTA -->
+
+    <section class="cta">
+
+      <div>
+
+        <h2>
+          Need professional help?
+        </h2>
+
+        <p>
+          Post your project and connect with skilled
+          freelancers from around the world.
+        </p>
+
+        <a
+          href="post-job.html"
+          class="btn btn-primary"
+        >
+          Post a Job
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FREELANCER CTA -->
+
+    <section class="section">
+
+      <div class="section-title">
+
+        <h2>
+          Ready to find your next opportunity?
+        </h2>
+
+        <p>
+          Create your WorkNest profile and start exploring
+          professional opportunities.
+        </p>
+
+        <a
+          href="signup.html"
+          class="btn btn-primary"
+        >
+          Create Your Account
+        </a>
+
+      </div>
+
     </section>
 
   </main>
 
+
   <footer>
 
-    <div class="footer-content">
-
-      <div>
-        <h3>WorkNest</h3>
-        <p>
-          Find Talent. Get Work. Build Together.
-        </p>
-      </div>
-
-      <div>
-        <h4>Platform</h4>
-        <a href="jobs.html">Browse Jobs</a>
-        <a href="post-job.html">Post a Job</a>
-        <a href="signup.html">Create Account</a>
-        <a href="login.html">Log In</a>
-      </div>
-
-      <div>
-        <h4>Company</h4>
-        <a href="about.html">About WorkNest</a>
-        <a href="contact.html">Contact</a>
-        <a href="safety.html">Safety</a>
-      </div>
-
-      <div>
-        <h4>Legal</h4>
-        <a href="terms.html">Terms of Service</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="cookies.html">Cookie Policy</a>
-      </div>
-
-    </div>
-
     <div class="copyright">
+
       © 2026 WorkNest. All rights reserved.
+
     </div>
 
   </footer>
 
-  <script>
-    function searchJobs() {
-      const search = document.getElementById("jobSearch").value.trim();
 
-      if (search === "") {
-        alert("Please enter a job, skill or service to search.");
-        return;
-      }
-
-      window.location.href =
-        "jobs.html?search=" + encodeURIComponent(search);
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
