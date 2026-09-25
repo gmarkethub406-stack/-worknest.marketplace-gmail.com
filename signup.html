@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your WorkNest account and start finding work or hiring talent.">
+  <title>Sign Up — WorkNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Work<span>Nest</span></a>
+
+    <div class="nav-buttons">
+      <a href="index.html" class="btn btn-light">Home</a>
+      <a href="login.html" class="btn btn-light">Log In</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+
+      <div style="max-width: 520px; margin: 0 auto;">
+
+        <div class="section-title">
+          <h2>Create Your WorkNest Account</h2>
+          <p>Join WorkNest and start finding talent or getting work.</p>
+        </div>
+
+        <div class="card">
+
+          <form id="signupForm">
+
+            <label for="fullName">Full Name</label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              placeholder="Your full name"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <label for="accountType">I want to</label>
+            <select
+              id="accountType"
+              name="accountType"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; background:white;"
+            >
+              <option value="">Select an option</option>
+              <option value="freelancer">Work as a Freelancer</option>
+              <option value="client">Hire a Freelancer</option>
+            </select>
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              required
+              minlength="6"
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm your password"
+              required
+              minlength="6"
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <label style="display:flex; gap:10px; align-items:flex-start; margin-bottom:20px;">
+              <input type="checkbox" id="terms" required style="margin-top:4px;">
+              <span>
+                I agree to the WorkNest Terms of Service and Privacy Policy.
+              </span>
+            </label>
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width:100%;"
+            >
+              Create Account
+            </button>
+
+          </form>
+
+          <p style="text-align:center; margin-top:22px; color:#64748b;">
+            Already have an account?
+            <a href="login.html" style="color:#2563eb; font-weight:700;">
+              Log In
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">
+      © 2026 WorkNest. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      alert(
+        "Your WorkNest signup page is ready. Secure account registration will be connected during the backend setup."
+      );
+    });
+  </script>
+
+</body>
+</html>
