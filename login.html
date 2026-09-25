@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in to your WorkNest account.">
+  <title>Log In — WorkNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Work<span>Nest</span></a>
+
+    <div class="nav-buttons">
+      <a href="index.html" class="btn btn-light">Home</a>
+      <a href="signup.html" class="btn btn-primary">Sign Up</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+
+      <div style="max-width: 480px; margin: 0 auto;">
+
+        <div class="section-title">
+          <h2>Welcome Back</h2>
+          <p>Log in to continue to WorkNest.</p>
+        </div>
+
+        <div class="card">
+
+          <form id="loginForm">
+
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+              minlength="6"
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width:100%;"
+            >
+              Log In
+            </button>
+
+          </form>
+
+          <p style="text-align:center; margin-top:22px; color:#64748b;">
+            Don't have an account?
+            <a href="signup.html" style="color:#2563eb; font-weight:700;">
+              Create one
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">
+      © 2026 WorkNest. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      alert(
+        "Your login page is ready. Secure account authentication will be connected during the backend setup."
+      );
+    });
+  </script>
+
+</body>
+</html>
