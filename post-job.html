@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Post a freelance job on WorkNest.">
+  <title>Post a Job — WorkNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Work<span>Nest</span></a>
+
+    <div class="nav-buttons">
+      <a href="index.html" class="btn btn-light">Home</a>
+      <a href="jobs.html" class="btn btn-light">Browse Jobs</a>
+      <a href="login.html" class="btn btn-light">Log In</a>
+      <a href="signup.html" class="btn btn-primary">Sign Up</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section">
+
+      <div style="max-width: 650px; margin: 0 auto;">
+
+        <div class="section-title">
+          <h2>Post a Job</h2>
+          <p>Tell skilled freelancers what you need and find the right talent.</p>
+        </div>
+
+        <div class="card">
+
+          <form id="postJobForm">
+
+            <label for="jobTitle">Job Title</label>
+            <input
+              type="text"
+              id="jobTitle"
+              name="jobTitle"
+              placeholder="e.g. Website Designer"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <label for="category">Category</label>
+            <select
+              id="category"
+              name="category"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; background:white;"
+            >
+              <option value="">Select a category</option>
+              <option value="programming">Programming & Technology</option>
+              <option value="design">Design & Creative</option>
+              <option value="writing">Writing & Translation</option>
+              <option value="marketing">Marketing</option>
+              <option value="business">Business</option>
+              <option value="video">Video & Animation</option>
+              <option value="music">Music & Audio</option>
+              <option value="consulting">Consulting</option>
+              <option value="other">Other Services</option>
+            </select>
+
+            <label for="description">Job Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Describe the work you need, requirements and expected results..."
+              required
+              rows="7"
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none; resize:vertical;"
+            ></textarea>
+
+            <label for="budget">Budget</label>
+            <input
+              type="number"
+              id="budget"
+              name="budget"
+              placeholder="Enter your budget"
+              min="1"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <label for="currency">Currency</label>
+            <select
+              id="currency"
+              name="currency"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; background:white;"
+            >
+              <option value="USD">USD — US Dollar</option>
+              <option value="GBP">GBP — British Pound</option>
+              <option value="CAD">CAD — Canadian Dollar</option>
+              <option value="AUD">AUD — Australian Dollar</option>
+              <option value="EUR">EUR — Euro</option>
+              <option value="NGN">NGN — Nigerian Naira</option>
+            </select>
+
+            <label for="location">Work Location</label>
+            <select
+              id="location"
+              name="location"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; background:white;"
+            >
+              <option value="worldwide">Worldwide</option>
+              <option value="remote">Remote</option>
+              <option value="uk">United Kingdom</option>
+              <option value="usa">United States</option>
+              <option value="canada">Canada</option>
+              <option value="australia">Australia</option>
+              <option value="europe">Europe</option>
+              <option value="other">Other</option>
+            </select>
+
+            <label for="deadline">Deadline</label>
+            <input
+              type="date"
+              id="deadline"
+              name="deadline"
+              required
+              style="width:100%; padding:14px; margin:8px 0 20px; border:1px solid #e2e8f0; border-radius:8px; outline:none;"
+            >
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width:100%;"
+            >
+              Post Job
+            </button>
+
+          </form>
+
+          <p style="text-align:center; margin-top:22px; color:#64748b;">
+            You will be able to manage applications and communicate with
+            freelancers from your WorkNest account.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="copyright">
+      © 2026 WorkNest. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("postJobForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      alert(
+        "Your job-posting page is ready. Job publishing and database storage will be connected during the backend setup."
+      );
+    });
+  </script>
+
+</body>
+</html>
