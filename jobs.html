@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse freelance jobs on WorkNest.">
+  <title>Browse Jobs — WorkNest</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Work<span>Nest</span></a>
+
+    <div class="nav-buttons">
+      <a href="index.html" class="btn btn-light">Home</a>
+      <a href="login.html" class="btn btn-light">Log In</a>
+      <a href="signup.html" class="btn btn-primary">Sign Up</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Find Work That Fits You</h1>
+        <p>Browse freelance opportunities from clients around the world.</p>
+
+        <div class="search-box">
+          <input
+            type="search"
+            id="jobSearch"
+            placeholder="Search jobs, skills or services..."
+          >
+          <button class="btn btn-primary" onclick="searchJobs()">
+            Search
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+
+      <div class="section-title">
+        <h2>Available Jobs</h2>
+        <p>Explore opportunities and find your next project.</p>
+      </div>
+
+      <div id="jobsList">
+
+        <div class="card job-card">
+          <h3>Website Designer</h3>
+          <p>
+            We are looking for a professional website designer to create a
+            modern and mobile-friendly business website.
+          </p>
+
+          <p><strong>Category:</strong> Design & Creative</p>
+          <p><strong>Location:</strong> Worldwide</p>
+          <p><strong>Budget:</strong> $300 – $800</p>
+
+          <a href="login.html" class="btn btn-primary">
+            View Job
+          </a>
+        </div>
+
+        <div class="card job-card">
+          <h3>Content Writer</h3>
+          <p>
+            Create clear, engaging and professional content for websites,
+            businesses and online platforms.
+          </p>
+
+          <p><strong>Category:</strong> Writing & Translation</p>
+          <p><strong>Location:</strong> Worldwide</p>
+          <p><strong>Budget:</strong> $100 – $500</p>
+
+          <a href="login.html" class="btn btn-primary">
+            View Job
+          </a>
+        </div>
+
+        <div class="card job-card">
+          <h3>Social Media Manager</h3>
+          <p>
+            Help manage social media accounts, create content and build
+            consistent online communication for a growing business.
+          </p>
+
+          <p><strong>Category:</strong> Marketing</p>
+          <p><strong>Location:</strong> Worldwide</p>
+          <p><strong>Budget:</strong> $250 – $1,000</p>
+
+          <a href="login.html" class="btn btn-primary">
+            View Job
+          </a>
+        </div>
+
+        <div class="card job-card">
+          <h3>Mobile App Developer</h3>
+          <p>
+            Build and maintain a professional mobile application for an
+            international business.
+          </p>
+
+          <p><strong>Category:</strong> Programming & Technology</p>
+          <p><strong>Location:</strong> Worldwide</p>
+          <p><strong>Budget:</strong> $1,000 – $5,000</p>
+
+          <a href="login.html" class="btn btn-primary">
+            View Job
+          </a>
+        </div>
+
+      </div>
+
+      <div id="noResults" style="display:none; text-align:center; margin-top:30px;">
+        <h3>No jobs found</h3>
+        <p>Try another job title, skill or service.</p>
+      </div>
+
+    </section>
+
+    <section class="cta">
+      <div>
+        <h2>Need someone to do the work?</h2>
+        <p>Post your project and connect with skilled freelancers.</p>
+        <a href="signup.html" class="btn btn-primary">
+          Post a Job
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="copyright">
+      © 2026 WorkNest. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    const jobs = document.querySelectorAll(".job-card");
+    const noResults = document.getElementById("noResults");
+
+    function searchJobs() {
+      const searchInput = document.getElementById("jobSearch");
+      const search = searchInput.value.trim().toLowerCase();
+
+      let found = 0;
+
+      jobs.forEach(function(job) {
+        const text = job.textContent.toLowerCase();
+
+        if (search === "" || text.includes(search)) {
+          job.style.display = "block";
+          found++;
+        } else {
+          job.style.display = "none";
+        }
+      });
+
+      noResults.style.display = found === 0 ? "block" : "none";
+    }
+
+    document.getElementById("jobSearch").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        searchJobs();
+      }
+    });
+  </script>
+
+</body>
+</html>
